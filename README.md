@@ -2,7 +2,7 @@
 
 Personal portfolio of Shawn, a full-stack and mobile developer based in Singapore.
 
-**Live site:** [add your Vercel link here](https://example.com)
+**Live site:** https://shawnho.vercel.app/
 
 ![Portfolio preview](img/og-preview.jpg)
 
