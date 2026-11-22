@@ -40,13 +40,15 @@ body::after {
 .top { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 50; width: min(calc(100% - 32px), 960px); }
 .top nav {
   position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 8px 8px 8px 18px; border-radius: 999px;
+  padding: 8px 8px 8px 10px; border-radius: 999px;
   background: rgba(16,20,42,.62); border: 1px solid var(--card-line); backdrop-filter: blur(16px) saturate(1.4);
   transition: background .3s, box-shadow .3s;
 }
 .top.scrolled nav { background: rgba(12,15,32,.82); box-shadow: 0 16px 40px -18px rgba(0,0,0,.8); }
 .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.logo { font-family: "Unbounded", sans-serif; font-weight: 700; font-size: 15px; text-decoration: none; letter-spacing: -0.02em; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-family: "Unbounded", sans-serif; font-weight: 700; font-size: 16px; text-decoration: none; letter-spacing: -0.02em; }
+.logo-mark { width: 34px; height: 34px; flex: none; border-radius: 9px; box-shadow: 0 6px 18px -4px rgba(255,77,141,.55); transition: transform .5s cubic-bezier(.3,1.4,.5,1); }
+.logo:hover .logo-mark { transform: rotate(-12deg) scale(1.08); }
 .cur-label { display: none; font-size: 13.5px; color: var(--ink-2); padding-left: 10px; border-left: 1px solid var(--card-line); white-space: nowrap; }
 .cur-label b { font-weight: 700; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .links { position: relative; display: flex; gap: 2px; align-items: center; }
@@ -211,7 +213,7 @@ section[id] { scroll-margin-top: 84px; }
 .tile ul.did li::before { content: ""; position: absolute; left: 0; top: 9px; width: 10px; height: 2px; background: var(--grad); }
 .tile code { font-family: "JetBrains Mono", monospace; font-size: .84em; color: #fff; background: rgba(255,255,255,.08); padding: 1px 6px; border-radius: 5px; }
 .chips { display: flex; flex-wrap: wrap; gap: 7px; list-style: none; padding: 0; margin: 0; }
-.chips li { font-size: 13px; font-weight: 500; padding: 4px 12px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid var(--card-line); color: var(--ink-2); }
+.chips li { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; padding: 4px 12px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid var(--card-line); color: var(--ink-2); }
 .tile-foot { margin-top: auto; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 .gh { font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; gap: 8px; align-items: center; }
 .gh:hover { color: var(--orange); }
@@ -415,3 +417,24 @@ footer .wrap { display: flex; justify-content: space-between; gap: 10px; flex-wr
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Brand and tool icons */
+.ic { width: 14px; height: 14px; flex: none; fill: currentColor; }
+.btn .ic { width: 17px; height: 17px; }
+.gh .ic { width: 16px; height: 16px; vertical-align: -3px; margin-right: 6px; }
+.chips li:hover .ic { transform: scale(1.15); }
+.chips li .ic { transition: transform .2s; }
+.logo-ic svg { width: 22px; height: 22px; color: #fff; }
+.now-ic svg { width: 22px; height: 22px; color: #fff; }
+.skill h3 span svg { width: 16px; height: 16px; color: #fff; }
+.logo-ic svg, .now-ic svg { display: block; }
+
+/* AWS architecture icons (official AWS Architecture Icons) */
+.node .aws-ic { display: block; width: 34px; height: 34px; margin: 0 auto 6px; border-radius: 7px; }
+.monitor { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding: 9px 12px; border-radius: 10px; background: rgba(255,255,255,.04); border: 1px dashed rgba(255,255,255,.12); font-size: 12.5px; color: var(--muted); }
+.monitor b { color: var(--ink); }
+.aws-ic.sm { width: 22px; height: 22px; border-radius: 5px; flex: none; }
+
+/* Organisation logos on white tiles */
+.logo-ic.org { background: #fff; padding: 4px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
+.logo-ic.org img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 6px; }
